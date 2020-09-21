@@ -33,3 +33,5 @@ It is possible to navigate to next and previous month by using arrows above the 
 It is possible to register, login and logout user, by default
 By default User role is added to every user, and during registration it is possible to chose if user is an Admin or not
 No user Role management is yet implemented
+
+Solution has 151MB because no git.ignore file has been added and because database has been attached to it
