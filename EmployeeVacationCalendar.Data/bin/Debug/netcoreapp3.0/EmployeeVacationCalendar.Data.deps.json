@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "EmployeeVacationCalendar.Data/1.0.0": {
+        "runtime": {
+          "EmployeeVacationCalendar.Data.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EmployeeVacationCalendar.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

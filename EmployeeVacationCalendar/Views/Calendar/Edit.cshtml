@@ -1,0 +1,68 @@
+﻿@model EmployeeVacationCalendar.Models.EditCalendarEntryDto
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*@{DateTime? originalDateFrom = Model.OriginalDateFrom;}
+@{DateTime? originalDateTo = Model.OriginalDateTo;}
+@{string originalVacationType = Model.OriginalVacationType.VacationType.Where(x => x.Selected).FirstOrDefault().Text;}*@
+
+<h1>Edit</h1>
+
+<h4>EditCalendarEntryDto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Save">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div style="display: none;">
+                <input asp-for="Id" class="form-control" />
+                <input asp-for="OriginalDateFrom" class="form-control" />
+                <input asp-for="OriginalDateTo" class="form-control" />
+                <input asp-for="OriginalVacationType" class="form-control" />
+                <div class="form-group">
+                    <div class="alert-danger" asp-validation-summary="ModelOnly"></div>
+                    <div>
+                        <label asp-for="OriginalVacationType.Vacation" class="control-label"></label>
+                        <select asp-for="OriginalVacationType.Vacation" class="form-control"
+                                asp-items="Model.OriginalVacationType.VacationType">
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="UpdatedDateFrom" class="control-label"></label>
+                <input id="updatedDateFrom" asp-for="UpdatedDateFrom" class="form-control" />
+                <span asp-validation-for="UpdatedDateFrom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UpdatedDateTo" class="control-label"></label>
+                <input asp-for="UpdatedDateTo" class="form-control" />
+                <span asp-validation-for="UpdatedDateTo" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="alert-danger" asp-validation-summary="ModelOnly"></div>
+                        <div>
+                            <label asp-for="UpdatedVacationType.Vacation" class="control-label"></label>
+                            <select asp-for="UpdatedVacationType.Vacation" class="form-control"
+                                    asp-items="Model.UpdatedVacationType.VacationType">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+

@@ -1,0 +1,153 @@
+﻿@model EmployeeVacationCalendar.ViewModel.CalendarListViewModel
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+</head>
+<body>
+
+    <div class="limiter">
+        <div class="container-table100">
+            <div class="row">
+                <a class="btn btn-info" href="@Url.Action("Index", "Calendar", new { date = Model.PreviousMonth.ToString()})">
+                    &lt;
+                </a>&nbsp;
+                <h3>
+                    @Model.CurrentMonthAndYear
+                </h3>
+                &nbsp;
+                <a class="btn btn-info" href="@Url.Action("Index", "Calendar", new { date = Model.NextMonth.ToString()})">
+                    &gt;
+                </a>
+            </div>
+            <div class="wrap-table100">
+                <div class="table100 ver1">
+                    <div class="table100-firstcol">
+                        <table>
+                            <thead>
+                                <tr class="row100 head">
+                                    <th class="cell100 column1">Employees</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model.Employees != null)
+                                {
+                                    @foreach (var item in Model.Employees)
+                                    {
+                                        <tr class="row100 body">
+                                            <td class="cell100 column1">@item.FullName</td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="wrap-table100-nextcols js-pscroll">
+                        <div class="table100-nextcols">
+                            <table>
+                                <thead>
+                                    <tr class="row100 head">
+                                        @for (int i = 1; i <= Model.DaysInMonth; i++)
+                                        {
+                                            var tt = i + 2;
+                                            string collumns = "column";
+                                            string collumnNumber = collumns + tt; ;
+                                            <th class="cell100 columnDflt">@i</th>
+                                        }
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model.Employees != null)
+                                    {
+                                        @foreach (var employee in Model.Employees)
+                                        {
+                                            <tr class="row100 body">
+                                                @foreach (var day in employee.SpecialDays)
+                                                {
+                                                    @*<td class="cell100 column2 @day.DayStatusBackroundColor">@day.DayStatus</td>*@
+                                                    <td class="cell100 column2 @day.DayStatusBackroundColor"><a href="@Url.Action("Edit", "Calendar", new { userId = employee.Id, date = new DateTime(Model.CurrrentYear, Model.SelectedMonth, day.Day)})">@day.DayStatus</a></td>
+                                                }
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div>
+        <h4>CalendarListViewModel</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.SelectedMonth)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.SelectedMonth)
+            </dd>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CurrentMonthAndYear)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.NextMonth)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NextMonth)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.PreviousMonth)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PreviousMonth)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CurrrentYear)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CurrrentYear)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.NextYear)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NextYear)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.PreviousYear)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PreviousYear)
+            </dd>
+            @for (int i = 0; i < Model.CurrentMonthMaxDays; i++)
+            {
+                <p>@i</p>
+            }
+        </dl>
+    </div>
+    <div>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+C:\Users\Darko\source\repos\EmployeeVacationCalendar\EmployeeVacationCalendar.Data\bin\Debug\netcoreapp3.0\EmployeeVacationCalendar.Data.deps.json
+C:\Users\Darko\source\repos\EmployeeVacationCalendar\EmployeeVacationCalendar.Data\bin\Debug\netcoreapp3.0\EmployeeVacationCalendar.Data.dll
+C:\Users\Darko\source\repos\EmployeeVacationCalendar\EmployeeVacationCalendar.Data\bin\Debug\netcoreapp3.0\EmployeeVacationCalendar.Data.pdb
+C:\Users\Darko\source\repos\EmployeeVacationCalendar\EmployeeVacationCalendar.Data\obj\Debug\netcoreapp3.0\EmployeeVacationCalendar.Data.csprojAssemblyReference.cache
+C:\Users\Darko\source\repos\EmployeeVacationCalendar\EmployeeVacationCalendar.Data\obj\Debug\netcoreapp3.0\EmployeeVacationCalendar.Data.AssemblyInfoInputs.cache
+C:\Users\Darko\source\repos\EmployeeVacationCalendar\EmployeeVacationCalendar.Data\obj\Debug\netcoreapp3.0\EmployeeVacationCalendar.Data.AssemblyInfo.cs
+C:\Users\Darko\source\repos\EmployeeVacationCalendar\EmployeeVacationCalendar.Data\obj\Debug\netcoreapp3.0\EmployeeVacationCalendar.Data.dll
+C:\Users\Darko\source\repos\EmployeeVacationCalendar\EmployeeVacationCalendar.Data\obj\Debug\netcoreapp3.0\EmployeeVacationCalendar.Data.pdb
